@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Melhorias no Código -->
+    <!-- 3. Estruturas de decisão (if/else/switch): Utilizado switch para definir a cor de fundo do header com base na hora do dia -->
+    <!-- 4. Estruturas de laço (while, do while, for, foreach): Utilizado for para adicionar links na navegação -->
+    <!-- 5. Função: Adicionada a função alterarCorHeader para mudar a cor do header com base na hora do dia -->
+    <!-- 6. CSS com JS: Utilizado JavaScript para alterar dinamicamente a classe do header -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelas - 7K Games</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            /* Alteração: Adicionado gradiente de fundo ao body */
+            background: linear-gradient(135deg, #5D5A7D, #7D5A5A);
+            color: #fff;
+        }
+
+        header {
+            /* Alteração: Utilizado JavaScript para alterar dinamicamente a classe do header */
+            /* Alteração: Adicionado gradiente de fundo ao header */
+            background: linear-gradient(135deg, #9C92AC, #625E78);
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin: 0;
+        }
+
+        /* Alteração: Adicionada classe 'noite' para o header */
+        header.noite {
+            background: linear-gradient(135deg, #333, #000);
+        }
+
+        section {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            margin: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+        }
+
+        section h2 {
+            font-size: 24px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table, th, td {
+            border: 1px solid white;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #555;
+        }
+
+        th, td {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header id="pageHeader">
+        <h1>Tabelas</h1>
+    </header>
+
+    <nav class="Navegação">
+        <ul>
+            <!-- Alteração: Utilizado for para adicionar links na navegação -->
+            <script>
+                for (let i = 1; i <= 3; i++) {
+                    document.write(`<li><a href="#">Link ${i}</a></li>`);
+                }
+            </script>
+        </ul>
+    </nav>
+
+    <section>
+        <h2>Ação</h2>
+        <table>
+            <tr>
+                <th>Game 1</th>
+                <th>Game 2</th>
+                <th>Game 3</th>
+            </tr>
+            <tr>
+                <td>Porcentagem de vendas: 80%</td>
+                <td>Porcentagem de vendas: 95%</td>
+                <td>Porcentagem de vendas: 72%</td>
+            </tr>
+            <tr>
+                <td>Número de dowloads: xxx</td>
+                <td>Número de dowloads: xxx</td>
+                <td>Número de dowloads: xxx</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>RPG</h2>
+        <table>
+            <tr>
+                <th>Game 1</th>
+                <th>Game 2</th>
+                <th>Game 3</th>
+            </tr>
+            <tr>
+                <td>Porcentagem de vendas: 70%</td>
+                <td>Porcentagem de vendas: 95%</td>
+                <td>Porcentagem de vendas: 81%</td>
+            </tr>
+            <tr>
+                <td>Número de dowloads: xxx</td>
+                <td>Número de dowloads: xxx</td>
+                <td>Número de dowloads: xxx</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Terror</h2>
+        <table>
+            <tr>
+                <th>Game 1</th>
+                <th>Game 2</th>
+                <th>Game 3</th>
+            </tr>
+            <tr>
+                <td>Porcentagem de vendas: 92%</td>
+                <td>Porcentagem de vendas: 70%</td>
+                <td>Porcentagem de vendas: 94%</td>
+            </tr>
+            <tr>
+                <td>Número de dowloads: xxx</td>
+                <td>Número de dowloads: xxx</td>
+                <td>Número de dowloads: xxx</td>
+            </tr>
+        </table>
+    </section>
+
+    <script>
+        // Alteração: Função para alterar dinamicamente a classe do header com base na hora do dia
+        function alterarCorHeader() {
+            const header = document.getElementById('pageHeader');
+            const horaAtual = new Date().getHours();
+
+            if (horaAtual >= 6 && horaAtual < 18) {
+                header.classList.remove('noite'); // Remover classe 'noite' se existir
+            } else {
+                header.classList.add('noite'); // Adicionar classe 'noite' se não existir
+            }
+        }
+
+        // Chamando a função ao carregar a página
+        alterarCorHeader();
+    </script>
+</body>
+</html>
